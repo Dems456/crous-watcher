@@ -9,16 +9,9 @@ from email.message import EmailMessage
 # ================== À PERSONNALISER ==================
 
 URLS = [
-    # Mets ici tes URLs de recherche CROUS filtrées
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.169302_48.9205991_2.234232_48.8742291",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.2710281_48.9036389_2.3037934_48.8856378",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.2475775_48.9510806_2.3284911_48.9126465",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.2456228_48.8983695_2.2844588_48.8740806",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.0699384_48.82861_2.1683504_48.7792297",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=1.4462445_49.241431_3.5592208_48.1201456",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.1695755_48.7188772_2.209699_48.6755091",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.1997654_48.8827632_2.2367935_48.8593914",
-    "https://trouverunlogement.lescrous.fr/tools/42/search?bounds=2.224122_48.902156_2.4697602_48.8155755"]
+    # Lyon
+    "https://trouverunlogement.lescrous.fr/tools/45/search?occupationModes=alone&bounds=4.7718134_45.8082628_4.8983774_45.7073666&locationName=Lyon",
+]
 
 STATE_FILE = "known_accommodations.json"
 
@@ -153,11 +146,11 @@ def main():
         lines.append(f"URL : {url}")
         for a in accs:
             total_new += 1
-            full_url = "https://trouverunlogement.lescrous.fr" + a["href"]  # ← ajoute ça
+            full_url = "https://trouverunlogement.lescrous.fr" + a["href"]
             if a["price"]:
-                lines.append(f"- {a['name']} ({a['price']}) → {full_url}")  # ← modifie ça
+                lines.append(f"- {a['name']} ({a['price']}) → {full_url}")
             else:
-                lines.append(f"- {a['name']} → {full_url}") ['name']}")
+                lines.append(f"- {a['name']} → {full_url}")
         lines.append("")
 
     if total_new == 0:
