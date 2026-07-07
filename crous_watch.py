@@ -10,7 +10,7 @@ from email.message import EmailMessage
 
 URLS = [
     # Lyon
-    "https://trouverunlogement.lescrous.fr/tools/45/search?occupationModes=alone&bounds=4.7718134_45.8082628_4.8983774_45.7073666&locationName=Lyon",
+    "https://trouverunlogement.lescrous.fr/tools/47/search",
 ]
 
 STATE_FILE = "known_accommodations.json"
